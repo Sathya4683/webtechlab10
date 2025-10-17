@@ -25,4 +25,4 @@ This project is a simple web server built with Node.js that serves two pages: a 
 
 ## Deployment
 
-This project can be deployed to Vercel.
+  This project has been deployed on vercel (https://webtechlab10.vercel.app/)
