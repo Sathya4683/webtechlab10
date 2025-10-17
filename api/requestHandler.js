@@ -1,6 +1,7 @@
 // This module provides a function for serving files.
 
 const fs = require('fs');
+const path = require('path');
 const logger = require('./logger');
 
 /**
@@ -10,7 +11,8 @@ const logger = require('./logger');
  * @param {http.ServerResponse} res - The response object.
  */
 function serveFile(fileName, res) {
-  fs.readFile(fileName, 'utf8', (err, data) => {
+  const filePath = path.join(__dirname, '..', fileName);
+  fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
       logger.logError(`Error reading ${fileName}: ${err}`);
       if (fileName === 'index.html') {
