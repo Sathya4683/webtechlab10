@@ -1,6 +1,14 @@
+// This module provides a function for serving files.
+
 const fs = require('fs');
 const logger = require('./logger');
 
+/**
+ * Serves a file to the client.
+ * If the file is not found, it serves a fallback page.
+ * @param {string} fileName - The name of the file to serve.
+ * @param {http.ServerResponse} res - The response object.
+ */
 function serveFile(fileName, res) {
   fs.readFile(fileName, 'utf8', (err, data) => {
     if (err) {

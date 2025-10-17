@@ -1,3 +1,5 @@
+// This is the main entry point of the application.
+// It creates an HTTP server and listens for requests.
 
 const http = require('http');
 const router = require('./router');
